@@ -22,7 +22,7 @@ use Hybrid\Contracts\Bootable;
  * @since  1.0.0
  * @access public
  */
-class RootstrapDefaults extends Bootable {
+class RootstrapDefaults implements Bootable {
 
     /**
      * Store instance
