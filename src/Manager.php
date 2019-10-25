@@ -40,7 +40,7 @@ class Manager implements Bootable {
      */
     public function boot() {
         add_action( 'init', [ $this, 'init' ], PHP_INT_MAX );
-        add_action( 'customize_register', [ $this, 'customize_register' ], PHP_INT_MAX );
+        add_action( 'customize_register', [ $this, 'customizeRegister' ], PHP_INT_MAX );
     }
 
     /**
@@ -50,11 +50,11 @@ class Manager implements Bootable {
      * @return void
      */
     public function init() {
-        $defaults = new Customize_Defaults;
+        $defaults = new CustomizeDefaults;
         // action for theme or plugins to add or remove defaults
-        do_action( 'rootstrap/register/defaults', $defaults );
+        do_action( 'rootstrap/defaults', $defaults );
         $this->defaults = $defaults;
-        $this->theme_mod_filters();
+        $this->themeModFilters();
     }
 
     /**
@@ -63,7 +63,7 @@ class Manager implements Bootable {
      * @since 1.0.0
      * @return void
      */
-    public function get_defaults() {
+    public function getDefaults() {
         return $this->defaults;
     }
 
@@ -76,9 +76,9 @@ class Manager implements Bootable {
      * @since 1.0.0
      * @return void
      */
-    public function theme_mod_filters() {
-        foreach( $this->get_defaults()->all() as $id => $default ) {
-            add_filter( "rootstrap/mods/{$id}/default", function( $fallback ) use ( $default ) {
+    public function themeModFilters() {
+        foreach( $this->getDefaults()->all() as $id => $default ) {
+            add_filter( "rootstrap/defaults/{$id}", function( $fallback ) use ( $default ) {
                 return ( $default->value() && '' !== $default->value() ) ? $default->value() : $fallback;
             });
         }
@@ -89,8 +89,8 @@ class Manager implements Bootable {
      *
      * @param  object $wp_customize - the WordPress customizer object
      */
-    public function customize_register( $wp_customize ) {
-        foreach( $this->get_defaults()->all() as $id => $value ) {
+    public function customizeRegister( $wp_customize ) {
+        foreach( $this->getDefaults()->all() as $id => $value ) {
             $setting = $wp_customize->get_setting( $id );
             // if setting exists, set the control default
             if( $setting && isset( $value ) ) {
