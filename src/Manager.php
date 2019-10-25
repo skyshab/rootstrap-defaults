@@ -25,32 +25,12 @@ use Hybrid\Contracts\Bootable;
 class Manager implements Bootable {
 
     /**
-     * Store instance
-     */
-    private static $instance = null;
-
-    /**
      * Stores module objects
      *
      * @since 1.0.0
      * @var array
      */
     private $defaults;
-
-    /**
-     * Get instance.
-     *
-     * Instantiate new instance if one has not already been created.
-     *
-     * @since 1.0.0
-     * @return object
-     */
-    public static function instance(){
-        if(self::$instance == null) {
-            self::$instance = new RootstrapDefaults();
-        }
-        return self::$instance;
-    }
 
     /**
      * Load resources.
@@ -110,7 +90,7 @@ class Manager implements Bootable {
      * @param  object $wp_customize - the WordPress customizer object
      */
     public function customize_register( $wp_customize ) {
-        foreach( get_customize_defaults() as $id => $value ) {
+        foreach( $this->get_defaults()->all() as $id => $value ) {
             $setting = $wp_customize->get_setting( $id );
             // if setting exists, set the control default
             if( $setting && isset( $value ) ) {
