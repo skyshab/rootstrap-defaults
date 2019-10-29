@@ -1,16 +1,17 @@
-# Rootstrap Customize Defaults
+# Rootstrap Defaults
 
-Version: 1.1.0
-Released: 05/19/2019
+Version: 1.0.0
+Released: 10/29/2019
 
 ## Description
-Rootstrap Customize Defaults extends Rootstrap to add functionality for managing customizer defaults.
+
+Rootstrap Defaults extends Rootstrap to add functionality for managing customizer defaults.
 
 ## Requirements
 
-* Rootstrap v1.1.0+
-* WordPress 5.0+
-* PHP 7.0+
+* WordPress 5.0+.
+* Hybrid Core
+* Rootstrap 2.0+
 * [Composer](https://getcomposer.org/) for managing PHP dependencies.
 
 
@@ -20,7 +21,7 @@ Rootstrap is a collection of tools for use when implementing the WordPress Custo
 your theme or plugin.
 
 Rootstrap Customize Defaults allows you to define the default values to be used for customizer control defaults,
-and use these values as the fallback value when using Rootstrap's custom get_theme_mod function. This allows
+and use these values as the fallback value when using the custom get_theme_mod function. This allows
 defaults for both settings and styles to be managed from a single place.
 
 ### Installation
@@ -28,12 +29,12 @@ defaults for both settings and styles to be managed from a single place.
 Use the following command from your command line to install the package.
 
 ```
-composer require skyshab/rootstrap-customize-defaults
+composer require skyshab/rootstrap-defaults
 ```
 
 ## Documentation
 
-Read the project wiki: https://github.com/skyshab/rootstrap/wiki
+Read the project wiki: https://github.com/skyshab/rootstrap-defaults/wiki
 
 ## Copyright and License
 

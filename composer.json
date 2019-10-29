@@ -1,8 +1,8 @@
 {
 	"name"        : "skyshab/rootstrap-defaults",
-	"description" : "Rootstrap Customize Defaults extends Rootstrap to add functionality for managing Customizer defaults.",
+	"description" : "Extends Rootstrap to add functionality for managing Customizer defaults.",
 	"keywords"    : [ "wordpress" ],
-	"homepage"    : "https://github.com/skyshab/rootstrap-customize-defaults",
+	"homepage"    : "https://github.com/skyshab/rootstrap-defaults",
 	"license"     : "GPL-2.0-or-later",
 	"authors"     : [
 		{
@@ -13,7 +13,7 @@
 		}
 	],
 	"support"     : {
-		"issues" : "https://github.com/skyshab/rootstrap/issues"
+		"issues" : "https://github.com/skyshab/rootstrap-defaults/issues"
 	},
 	"autoload"    : {
 		"psr-4" : {
@@ -24,6 +24,6 @@
 		]
 	},
 	"require"     : {
-		"php" : ">=5.6"
+        "skyshab/rootstrap" : ">=1.0"
 	}
 }
