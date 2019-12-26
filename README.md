@@ -1,7 +1,7 @@
 # Rootstrap Defaults
 
-Version: 1.0.0
-Released: 10/29/2019
+Version: 1.1.0
+Released: 12/26/2019
 
 ## Description
 
@@ -17,12 +17,11 @@ Rootstrap Defaults extends Rootstrap to add functionality for managing customize
 
 ## Features
 
-Rootstrap is a collection of tools for use when implementing the WordPress Customize API in
-your theme or plugin.
+Rootstrap is a collection of tools for use when implementing the WordPress Customizer functionality in
+your theme.
 
-Rootstrap Customize Defaults allows you to define the default values to be used for customizer control defaults,
-and use these values as the fallback value when using the custom get_theme_mod function. This allows
-defaults for both settings and styles to be managed from a single place.
+Rootstrap Defaults simply creates a Collection of customizer defaults that can be added to and retrieved
+within the theme application.
 
 ### Installation
 
